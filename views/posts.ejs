@@ -1,0 +1,18 @@
+<h1>Lista posts</h1>
+<p>Estos son los posts 
+
+    <% for (const post of posts) { %>
+        <div class="post">
+          <h2><%= post.title %></h2>
+          <!-- <img src="<%= post.imagen %>" alt="Imagen del post"> -->
+          <%- include ('./attachments/attachment', {post} ) %>
+          <a href="/posts/<%= post.id %>">Ver</a>
+          <a href="/posts/<%= post.id %>/edit">Editar</a>
+          <!-- <a href="/posts/<%= post.id %>/delete">Eliminar</a> -->
+          <a href="/posts/<%= post.id %>?_method=DELETE"
+            onClick="return confirm('Delete: <%= post.question %>');"
+            class="button">Delete</a>
+        </div>
+      <% } %>
+
+</p>

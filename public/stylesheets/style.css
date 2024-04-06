@@ -1,0 +1,90 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+}
+.content {
+  flex: 1; /* Allow content to take up remaining space */
+  padding: 30px;
+  padding: 15px;
+}
+a {
+  color: #00B7FF;
+  padding: 15px;
+}
+
+/* Header Styles */
+header, nav {
+  margin: 0;
+  text-align: center;
+  background: black;
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  text-decoration: none;
+}
+.titulo, #pagina1{
+  text-decoration: none;
+  padding-left: 30px;
+}
+.titulo {
+  flex-basis: 50%;
+  text-align: center;
+  padding-right: 40px;
+  text-decoration: none;
+  color: white;
+}
+#pagina1 {
+  flex-basis: 50%;
+  text-align: center;
+  padding-right: 40px;
+  text-decoration: none;
+  color: white;
+}
+main {
+  padding: 15px;
+}
+/* Footer Styles */
+footer {
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  flex-flow: row;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Content Area (Optional) */
+.content {
+  padding: 50px; /* Padding for main content area (adjust as needed) */
+  min-height: calc(100vh - (header + footer heights)); /* Ensures content pushes footer down */
+}
+
+#footer_izq {
+  flex-basis: 50%;
+  margin-left: 5%;
+}
+
+#footer_dcha {
+  flex-basis: 50%;
+  text-align: right;
+  text-decoration: none;
+  color: white;
+}
+
+#footer_dcha, #footer_izq {
+  margin: 10px;
+  padding: 10px;
+}
+
+.attachment {
+  border-radius: 10px;
+  border: 2px solid #00f;
+  object-fit: cover;
+  /* width: 300px;
+  height: 300px; */
+
+ }
