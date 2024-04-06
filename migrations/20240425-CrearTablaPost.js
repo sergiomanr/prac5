@@ -32,9 +32,9 @@ module.exports = {
             },
         } 
     },
-    {
-    sync: {force: true}
-    }
+        {
+        sync: {force: true}
+        }
     );
     },
     down: async (queryInterface, Sequelize) => {

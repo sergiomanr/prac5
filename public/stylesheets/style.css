@@ -5,7 +5,7 @@ body {
   flex-flow: column;
 }
 .content {
-  flex: 1; /* Allow content to take up remaining space */
+  flex: 1;  
   padding: 30px;
   padding: 15px;
 }
@@ -14,7 +14,7 @@ a {
   padding: 15px;
 }
 
-/* Header Styles */
+
 header, nav {
   margin: 0;
   text-align: center;
@@ -45,7 +45,7 @@ header, nav {
 main {
   padding: 15px;
 }
-/* Footer Styles */
+
 footer {
   width: 100%;
   background-color: black;
@@ -57,10 +57,10 @@ footer {
   bottom: 0;
 }
 
-/* Content Area (Optional) */
+
 .content {
-  padding: 50px; /* Padding for main content area (adjust as needed) */
-  min-height: calc(100vh - (header + footer heights)); /* Ensures content pushes footer down */
+  padding: 50px; 
+  min-height: calc(100vh - (header + footer heights)); 
 }
 
 #footer_izq {
@@ -82,9 +82,120 @@ footer {
 
 .attachment {
   border-radius: 10px;
-  border: 2px solid #00f;
+  border: 2px solid rgb(0, 0, 0);
   object-fit: cover;
-  /* width: 300px;
-  height: 300px; */
 
  }
+#relleno_footer {
+  padding: 10px;
+}
+#Editar, #Volver, #Ver, #Delete, #Cancelar, #Save, #Nuevo {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#Editar:hover, #Volver:hover, #Ver:hover, #Delete:hover, #Save:hover, #Cancelar:hover, #Nuevo:hover {
+  background-color: #808080;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: auto 1fr;  
+  grid-gap: 20px;
+}
+
+.post-title {
+  grid-column: 1 / span 2; 
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.post-divider {
+  grid-column: 1 / span 2;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.post-image {
+  width: 100%; 
+}
+.post-content {
+  display: flex;
+  flex-flow: column;
+}
+.post-body {
+  font-size: 16px;
+  flex-basis: 90%;
+}
+
+.post-buttons {
+  margin-top: 20px; 
+  flex-basis: 10%;
+}
+
+
+.wideRow {
+  margin-bottom: 20px;
+}
+
+
+.itemNarrow {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+
+.itemWide {
+  width: calc(100% - 120px); 
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+  margin-bottom: 10px;
+}
+
+#img {
+  margin-top: 10px;
+}
+
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#Centro_edit_add {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+#cabecera {
+  display: flex;
+  flex-flow: row;
+}
+#cabecera_izq, #cabecera_dcha {
+  flex-basis: 50%;
+}
+#cabecera_dcha {
+  padding: 15px;
+  text-align: right;
+  font-size: 50px;
+}
+#Nuevo {
+  padding: 12px 20px;
+  font-size: 30px; 
+}

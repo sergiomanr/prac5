@@ -1,7 +1,6 @@
-<h1>
-    Edit Post:
-</h1>
-
+<div id="Centro_edit_add">
+    <h1>Edit Post:</h1>
+  </div>
 <form method="post" action="/posts/<%= post.id %>?_method=PUT" enctype="multipart/form-data" >
     <%- include ('_form.ejs') %>
 </form>

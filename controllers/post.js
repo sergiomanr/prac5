@@ -1,9 +1,14 @@
 const {models} = require("../models");
 const createError = require('http-errors');
 const Sequelize = require("sequelize");
-const { post } = require("../routes");
 
+exports.home = async (req, res, next) => {
+    res.render('index')
+}
 
+exports.author = async (req, res, next) => {
+    res.render('author');
+  }
 
 exports.index = async (req, res, next) => {
     try {
@@ -12,8 +17,6 @@ exports.index = async (req, res, next) => {
             {model: models.Attachments, as: 'attachment'}]
         };
     const posts = await models.Posts.findAll(findOptions);
-           
-    // const posts = await models.Posts.findAll();
     res.render('posts.ejs', {posts});
 
     } catch (error) {
@@ -50,17 +53,16 @@ exports.show = async (req, res, next ) => {
 
 exports.attachment = async (req, res, next) => {
     const {post} = req.load;
-    console.log('\nEntra en exports.attachemnts');
     const attachment = await models.Attachments.findByPk(post.attachmentId);
     if (!attachment) {
-        res.redirect("/images/none.png");
+        res.redirect("/images/vacio.jpg");
         } else if (attachment.image) {
             res.type(attachment.mime);
             res.send(attachment.image);
         } else if (attachment.url) {
             res.redirect(attachment.url);
         } else {
-            res.redirect("/images/none.png");
+            res.redirect("/images/vacio.jpg");
         }
    }
    
@@ -82,14 +84,12 @@ exports.create = async (req, res, next) => {
         post = models.Posts.build({title, body});
 
         post = await post.save({fields: ["title", "body"]});
-        // res.redirect('/posts/' + post.id);
+        
         try {
                 if (!req.file) {
                         console.log('Info: Post sin adjunto.');
-                    return;
+                        return;
                     }
-                console.log('\n')
-                console.log(req.file.mimetype)
                 const attachment = await models.Attachments.create({
                     mime: req.file.mimetype,
                     image: req.file.buffer,
@@ -126,12 +126,29 @@ exports.edit = (req, res, next) => {
 
 exports.update = async (req, res, next) => {
     const {post} = req.load;
-
     post.title = req.body.title;
     post.body = req.body.body;
     try {
         await post.save({fields: ["title", "body"]});
         res.redirect('/posts/' + post.id);
+        if (!post.attachment) {
+            console.log('Info: Post attachment not changed.');
+            return;
+        
+        } else {
+            console.log('Hay attachment')
+            await post.attachment?.destroy();
+        }
+
+        const attachment = await models.Attachments.create({
+            mime: req.file.mimetype,
+            image: req.file.buffer,
+            url: null
+            });
+
+        await post.setAttachment(attachment);
+        console.log('Success: Attachment saved successfully.');
+           
     } catch (error) {
         if (error instanceof (Sequelize.ValidationError)) {
             console.log('There are errors in the form:');
@@ -151,7 +168,3 @@ exports.destroy = async (req, res, next) => {
         next(error);
     }
    };
-async function adaf(a,b,c ) {
-    const hola = 'ada'
-}
-adaf(1,2,3)

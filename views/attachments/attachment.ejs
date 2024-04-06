@@ -6,7 +6,7 @@
             attachment.mime === "image/jpg" || attachment.mime === "image/png" ||
             attachment.mime === "image/gif" ) { %>
 
-        <img class="attachment" src="/posts/<%= post.id %>/attachment" alt="Image"/>
+        <img class="attachment" src="/posts/<%= post.id %>/attachment" alt="Image" width="300px"/>
 
         <% } else if ( attachment.mime === "application/pdf" ) { %>
             

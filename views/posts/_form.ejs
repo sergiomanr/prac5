@@ -1,18 +1,26 @@
-<div class="wideRow">
-    <label for="preg" class="itemNarrow">Titulo:</label>
-    <input type="text" class="itemWide" id="preg" name="title" value="<%= post.title %>"
-    placeholder="Titulo" autocomplete="off"/>
-</div>
-   <div class="wideRow">
-    <label for="resp" class="itemNarrow"><Body></Body>Body:</label>
-    <input type="text" class="itemWide" id="resp" name="body" value="<%= post.body %>"
-    placeholder="Body" autocomplete="off"/>
-</div>
-   <br/>
-   <a href="/posts" class="button">Cancel</a>
-   <input type="submit" value="Save">
-<br>
-<div>
-    <label for="img">Attach file (Max size 2MB):</label>
-    <input type="file" id="img" name="imagen"/>
-</div>
+<div class="formContainer">
+    <div class="wideRow">
+        <strong><label for="preg" class="itemNarrow">Titulo:</label></strong>
+        <input type="text" class="itemWide" id="preg" name="title" value="<%= post.title %>" placeholder="Titulo" autocomplete="off"/>
+    </div>
+  
+    <div class="wideRow">
+        <strong><label for="resp" class="itemNarrow">Body:</label></strong>
+        <input type="text" class="itemWide" id="resp" name="body" value="<%= post.body %>" placeholder="Body" autocomplete="off"/>
+    </div>
+  
+    <br>
+    <div class="wideRow">
+        <div></div>
+        <a href="/posts" id="Cancelar">Cancel</a>
+        <input type="submit" value="Save" id="Save">
+      </div>
+    
+  
+    <br>
+  
+    <div>
+      <label for="img">Attach file (Max size 2MB):</label>
+      <input type="file" id="img" name="imagen"/>
+    </div>
+  </div>
