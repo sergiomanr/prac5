@@ -4,22 +4,25 @@
     <div class="post-title">
       <h2><%= post.title %></h2>
     </div>
-    <div class="post-image">
-        <%- include ('../attachments/attachment', post) %>
+    <div id="tarjeta_show">
+        <div class="post-image">
+          <%- include ('../attachments/attachment', post) %>
+      </div>
+      
+      <div class="post-content">
+        <div class="post-body">
+          <%= post.body %>
+        </div>
+        
+        <div class="post-buttons">
+          <a href="/posts" id="Volver">Volver</a>
+          <a href="/posts/<%= post.id %>/edit" id="Editar">Editar</a>
+          <a href="/posts/<%= post.id %>?_method=DELETE"
+            onClick="return confirm('Borrar: <%= post.title %>');"
+            id="Delete">Eliminar</a>
+        </div>
+        
+      </div>
     </div>
     
-    <div class="post-content">
-      <div class="post-body">
-        <%= post.body %>
-      </div>
-      
-      <div class="post-buttons">
-        <a href="/posts" id="Volver">Volver</a>
-        <a href="/posts/<%= post.id %>/edit" id="Editar">Editar</a>
-        <a href="/posts/<%= post.id %>?_method=DELETE"
-           onClick="return confirm('Borrar: <%= post.title %>');"
-           id="Delete">Eliminar</a>
-      </div>
-      
-    </div>
 </div>

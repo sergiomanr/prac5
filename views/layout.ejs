@@ -3,15 +3,20 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <!-- <link rel='stylesheet' type='text/css' media='only screen and (min-width: 800px) and (min-device-width: 600px)'
+    href='/stylesheets/wide.css'/> -->
+    <link rel='stylesheet' type='text/css' media='only screen and (max-width: 480px)'
+    href='/stylesheets/smartphone.css'/>
  </head>
 <body>
     <header>
         <nav>
-            <a href="/" class="titulo">  <p id="texto_header"><strong>Inicio</strong></p>  </a>
+            <a href="/" id="pagina1">  <p><strong>Inicio</strong></p>  </a>
             <a href="/author" id="pagina1"> <p><strong>Author</strong></p></a> 
             <a href="/posts" id="pagina1"><p><strong>Posts</strong></p></a>     
         </nav>
-        
     </header>
     <main class="content">    
         <%- body %>
@@ -20,7 +25,7 @@
 
 </body>
     <div id="relleno_footer"></div>
-    <footer>
+    <footer >
         <div id="footer_izq" >Hecho por Sergio Manrique </div>
         <div id="footer_dcha">Contacto:<a id="footer_dcha" href="sergio.manrique@alumnos.upm.es">sergio.manrique@alumnos.upm.es</a></div>
         
