@@ -1,0 +1,9 @@
+Para ejecutar la práctica hay que seguir tres pasos:
+-Primero, ejecutar npm run migrate_win
+-Segundo, ejecutar npm run seed_win
+-Tercero, ejecutar npm start
+-A partir de este momento la pagina web está lista para ser usada.
+
+Elementos añadidos:
+Se han añadido estilos css para que la pagina se vea mejor, tiene estilos que responden al tamaño de la pantalla entre ordenador y telefono.
+Finalmente toda la práctica está subida a un repositorio publico en github accediendo desde este enlace: https://github.com/sergiomanr/prac5
